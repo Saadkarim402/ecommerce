@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
 import css from "styled-jsx/css";
 
-const StyledButton = styled.button`
-  background-color: #5542f6;
+export const ButtonStyle=css`
+background-color: #5542f6;
   padding: 5px 15px;
   color: #fff;
   border-radius: 5px;
   border: 0;
+  text-decoration: none;
   cursor: pointer;
   display: inline-flex;
   svg{
@@ -49,6 +50,12 @@ const StyledButton = styled.button`
         margin-right: 5px;
       }
     `}
+
+`
+
+const StyledButton = styled.button`
+${ButtonStyle}
+  
 `;
 
 export default function Button({ children, ...rest }) {
