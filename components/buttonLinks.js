@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { styled } from "styled-components";
-import { ButtonStyle } from "./button";
+import styled from "styled-components";
+import { ButtonStyle } from "@/components/button";
 
 const StyledLink = styled(Link)`
   ${ButtonStyle}
