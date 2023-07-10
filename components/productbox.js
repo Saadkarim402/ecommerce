@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import Button from "./button";
 import CartIcon from "./icons/CartIcon";
+import { CartContext } from "./CartContext";
 
 const { styled } = require("styled-components");
 
@@ -40,6 +42,7 @@ const ProductInfoBox = styled.div`
 `;
 
 export default function ProductBox({ _id, title, description, price }) {
+  const {addProduct}=useContext(CartContext);
   return (
     <ProductWrapper>
       <WhiteBox>
@@ -49,7 +52,7 @@ export default function ProductBox({ _id, title, description, price }) {
         <Title>{title}</Title>
         <PriceRow>
           <Price>${price}</Price>
-          <Button primary outline>
+          <Button primary outline  onClick={()=>addProduct(_id)}>
             <CartIcon /> Add to cart
           </Button>
         </PriceRow>
